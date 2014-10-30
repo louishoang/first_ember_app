@@ -8,16 +8,17 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
-
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" id="index">
+    <h2>{{name}}</h2>
+
     <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
+      <li><strong>Location: </strong>{{location}}</li>
+      <li><strong>Email: </strong>{{email}}</li>
+      <li><strong>Login: </strong>{{login}}</li>
+      <li>{{link-to "Members" "members"}}</li>
     </ul>
   </script>
 
