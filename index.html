@@ -22,12 +22,29 @@
     </ul>
   </script>
 
-  <script type="text/x-handlebars" id="members/index">
+  <script type="text/x-handlebars" id="members">
     <h1> Members </h1>
+    <table>
+      <tr>
+        <td>
+          <ul>
+            {{#each member in model}}
+              <li>{{link-to member.login "members.show" member.login}}</li>
+            {{/each}}
+          </ul>
+        </td>
+        <td>
+          {{outlet}}
+        </td>
+      </tr>
+    </table>
+  </script>
+
+  <script type="text/x-handlebars" id="members/show">
+    <h1>{{name}}</h1>
     <ul>
-      {{#each member in model}}
-        <li>{{member.login}}</li>
-      {{/each}}
+      <li><strong>Login:</strong> {{login}}</li>
+      <li><strong>Location:</strong> {{location}}</li>
     </ul>
   </script>
 
