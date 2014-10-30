@@ -22,6 +22,15 @@
     </ul>
   </script>
 
+  <script type="text/x-handlebars" id="members/index">
+    <h1> Members </h1>
+    <ul>
+      {{#each member in model}}
+        <li>{{member.login}}</li>
+      {{/each}}
+    </ul>
+  </script>
+
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember-1.8.0.js"></script>

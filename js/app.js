@@ -5,7 +5,7 @@ App.Router.map(function() {
   // put your routes here
   // routes index is not neccessary
   this.resource("members", function(){
-    this.resource("show");
+    this.resource("show", { path: "/:id" }); // member show route
   });
 });
 // similar to control in rails
@@ -21,5 +21,12 @@ App.IndexRoute = Ember.Route.extend({
     // };
     var organization = Ember.$.getJSON("https://api.github.com/orgs/LaunchAcademy")
     return organization;
+  }
+});
+
+App.MembersIndexRoute = Ember.Route.extend({
+  model: function(){
+    var members = Ember.$.getJSON("https://api.github.com/orgs/LaunchAcademy/members");
+    return members;
   }
 });
